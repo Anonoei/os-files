@@ -1,5 +1,5 @@
 # os-files
-Author: Devon Adams (https://github.com/devonadams/os-files)
+Author: Anonoei (https://github.com/anonoei)
 LICENSE: GPLv3
  This repository holds defaults for file configuration on various
  operating systems and scripts for setting things up more easily.
