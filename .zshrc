@@ -54,7 +54,7 @@ setopt autocd
 autoload -Uz run-help
 autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo run-help-svk run-help-svn
 ### ---- Install QoL features ---- ###
-PATH_ZSH="~/.local/share/.zsh"
+PATH_ZSH="${HOME}/.local/share/.zsh"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [[ ! -d "$PATH_ZSH" ]]; then
     mkdir -p "$PATH_ZSH"
@@ -235,24 +235,22 @@ setprompt()
   if [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
     p_host='%F{red}"ssh:"%M%f'
   else
-    p_host='%F{green}%M%f'
+    p_host='%F{cyan}%M%f'
   fi
 
     # [username@hostname][current-directory] >
   PS1=${(j::Q)${(Z:Cn:):-$'
-    %F{cyan}[%f                         ### First [
-    %(!.%F{red}%n%f.%F{green}%n%f)      ### Username
-    %F{cyan}@%f                         ### @
+    %(!.%F{red}%n%f.%F{cyan}%n%f)      ### Username
+    %F{blue}@%f                         ### @
     ${p_host}                           ### Hostname
-    %F{cyan}][%f                        ### ][
-    %F{cyan}%d%f                        ### Current Directory
-    %F{cyan}]%f                         ### Closing ]
-    %(!.%F{red}" ">%f.%F{green}" ">%f)	###	Prompt
+    :%f                        ### :
+    %F{blue}%d%f                        ### Current Directory
+    %(!.%F{red}" ">%f.%F{cyan}" ">%f)	###	Prompt
     " "
   '}}
 
   PS2=$'%_>'
 	  # show time in HH:MM:SS on right side
-  RPROMPT=' %F{white}$(date +%T)%f'
+  RPROMPT=' %F{white}$(date +%F)_$(date +%T)%f'
 }
 setprompt
