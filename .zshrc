@@ -13,7 +13,7 @@
 #   - zsh-autosuggestions
 #   - zinit (plugins)
 #   - fzf (fuzzy finder)
-version="0.3.1"
+version="0.3.2"
 ### -------------------------------- ###
 #        Aliases
 ### -------------------------------- ###
@@ -200,7 +200,6 @@ pacman() { confirm_wrap --root $0 "$@"; }
 apt() { confirm_wrap --root $0 "$@"; }
 nala() { confirm_wrap --root $0 "$@"; }
 port() { confirm_wrap --root $0 "$@"; }
-brew() { confirm_wrap --root $0 "$@"; }
 
 ### -------------------------------- ###
 #        Defines
